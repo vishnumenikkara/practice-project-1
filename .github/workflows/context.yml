@@ -1,0 +1,12 @@
+name: Context_WF
+on:
+    issues:
+        types: [opened, closed]
+
+jobs:
+    GetContext:
+        runs-on: ubuntu-latest
+        steps:
+
+            - name: Get event details.
+              run: echo "The event details are:- ${{ toJson(github.event) }}"
